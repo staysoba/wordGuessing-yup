@@ -1,10 +1,13 @@
 import random 
 
 def main():
+    file = open("wordlist", "r")
+    allthelinesinthefile = file.readlines()
+    file.close()
 
     words = ["process", "thread", "forks", "signal"] 
 
-    selectedword = words[random.randint(0, len(words) - 1)] 
+    selectedword = allthelinesinthefile[random.randint(0, len(allthelinesinthefile) - 1)] .strip()
     selectedword ="process"
     attempts = 2
     truthTracker = False
@@ -32,7 +35,7 @@ def main():
         userInput = input("guess a character > ")
 
         if len(userInput) > 1 or not userInput.isalpha():
-            print("you gave a bad input, you bad bad person")
+            # print("you gave a bad input, you bad bad person")
             continue
             
 
@@ -47,7 +50,7 @@ def main():
             print(item)
             if not item:
                 winingTracker = False
-                print("setting win tracker to false, then breaking out")
+                # print("setting win tracker to false, then breaking out")
                 break
                 # print("did you break out") # will not work or print because its after the breaking point code, the "break" will not allow it to print because it loops back up
             else:
