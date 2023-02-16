@@ -44,7 +44,7 @@ def main():
             if userInput == char:
                 mask[index] = True
                 truthTracker = True
-                
+                # TODO gotta add code.
     # check if each itme in the hidden word is true or
         for item in mask:
             print(item)
@@ -66,6 +66,18 @@ def main():
     else:
         print("you lost")
 
+
+    name = ""
+    while not name.isalpha():
+        print("enter name to be on the highscore list")
+        name = input("enter > ")
+
+        if not name.isalpha():
+            print("you gave teh name in a bad input")
+
+    file = open("saved", "a")
+    file.write("{},{}".format(name, scoreCurrent))
+    file.close()
 main()
             
 
